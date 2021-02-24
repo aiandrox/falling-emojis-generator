@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Emoji } from "emoji-mart";
+import { FormControl, Input } from "@material-ui/core";
 
 function App() {
   return (
@@ -9,9 +10,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Emoji emoji="thinking_face" size={64} />
 
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <FormControl>
+          <Input id="my-input" value={{ typingString }} />
+        </FormControl>
+
         <a
           className="App-link"
           href="https://reactjs.org"
