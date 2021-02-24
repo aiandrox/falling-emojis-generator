@@ -1,35 +1,39 @@
 import { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Emoji } from "emoji-mart";
+import { Emoji, NimbleEmojiIndex } from "emoji-mart";
+import data from "emoji-mart/data/google.json";
 import { FormControl, Input } from "@material-ui/core";
 
 function App() {
   const [typingString, setTypingString] = useState("");
+  const [emoji, setEmoji] = useState("");
+  function search(value) {
+    setTypingString(value);
+    if (value === "") return;
+
+    let emojiIndex = new NimbleEmojiIndex(data);
+    let emojiArray = emojiIndex.search(value);
+    let firstEmoji = emojiArray[0];
+    if (!firstEmoji) return;
+
+    if (value === firstEmoji["id"] || emojiArray.length === 1) {
+      setEmoji(firstEmoji);
+      setTypingString("");
+    }
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Emoji emoji="thinking_face" size={64} />
+        <Emoji emoji={emoji} size={32} />
 
-        {typingString}
         <FormControl>
           <Input
             id="my-input"
             value={typingString}
-            onChange={(e) => setTypingString(e.target.value)}
+            onChange={(e) => search(e.target.value)}
           />
         </FormControl>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
