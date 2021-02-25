@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/emoji-typing/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/emoji-typing/static/js/main.ebcc0844.chunk.js",
-    "main.js.map": "/emoji-typing/static/js/main.ebcc0844.chunk.js.map",
-    "runtime-main.js": "/emoji-typing/static/js/runtime-main.be62dad6.js",
-    "runtime-main.js.map": "/emoji-typing/static/js/runtime-main.be62dad6.js.map",
-    "static/js/2.f5c15fa9.chunk.js": "/emoji-typing/static/js/2.f5c15fa9.chunk.js",
-    "static/js/2.f5c15fa9.chunk.js.map": "/emoji-typing/static/js/2.f5c15fa9.chunk.js.map",
-    "static/js/3.d1a92679.chunk.js": "/emoji-typing/static/js/3.d1a92679.chunk.js",
-    "static/js/3.d1a92679.chunk.js.map": "/emoji-typing/static/js/3.d1a92679.chunk.js.map",
+    "main.css": "/emoji-typing/static/css/main.2c827a2b.chunk.css",
+    "main.js": "/emoji-typing/static/js/main.59fa99e4.chunk.js",
+    "main.js.map": "/emoji-typing/static/js/main.59fa99e4.chunk.js.map",
+    "runtime-main.js": "/emoji-typing/static/js/runtime-main.8b00f0be.js",
+    "runtime-main.js.map": "/emoji-typing/static/js/runtime-main.8b00f0be.js.map",
+    "static/js/2.4cecb422.chunk.js": "/emoji-typing/static/js/2.4cecb422.chunk.js",
+    "static/js/2.4cecb422.chunk.js.map": "/emoji-typing/static/js/2.4cecb422.chunk.js.map",
+    "static/js/3.4ca41479.chunk.js": "/emoji-typing/static/js/3.4ca41479.chunk.js",
+    "static/js/3.4ca41479.chunk.js.map": "/emoji-typing/static/js/3.4ca41479.chunk.js.map",
     "index.html": "/emoji-typing/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/emoji-typing/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.f5c15fa9.chunk.js.LICENSE.txt": "/emoji-typing/static/js/2.f5c15fa9.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/emoji-typing/static/media/logo.6ce24c58.svg"
+    "static/css/main.2c827a2b.chunk.css.map": "/emoji-typing/static/css/main.2c827a2b.chunk.css.map",
+    "static/js/2.4cecb422.chunk.js.LICENSE.txt": "/emoji-typing/static/js/2.4cecb422.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.be62dad6.js",
-    "static/js/2.f5c15fa9.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.ebcc0844.chunk.js"
+    "static/js/runtime-main.8b00f0be.js",
+    "static/js/2.4cecb422.chunk.js",
+    "static/css/main.2c827a2b.chunk.css",
+    "static/js/main.59fa99e4.chunk.js"
   ]
 }
