@@ -41,17 +41,18 @@ function App() {
   }
 
   const RenderEmoji = ({ emoji }) => (
-    <div>
+    <div className="animate__animated animate__fadeInDownBig">
       <Emoji emoji={emoji} size={32} />
     </div>
   );
 
   return (
     <div className="App">
+      {emojis.map((emoji, index) => (
+        <RenderEmoji key={index} emoji={emoji} />
+      ))}
       <header className="App-content">
-        {emojis.map((emoji, index) => (
-          <RenderEmoji key={index} emoji={emoji} />
-        ))}
+        <h1>clap</h1>
         <FormControl>
           <Input
             id="my-input"
