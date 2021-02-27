@@ -13,7 +13,9 @@ const useStyles = makeStyles({
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     position: "absolute",
     bottom: "10px",
-    right: Math.floor(Math.random() * 1100) + 1,
+    right: () => {
+      return Math.floor(Math.random() * 1100) + 1;
+    },
   },
 });
 
