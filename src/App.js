@@ -9,6 +9,13 @@ import { makeStyles } from "@material-ui/core/styles";
 let searchTimerId = null;
 
 const useStyles = makeStyles({
+  container: {
+    height: "100vh",
+    justifyContent: "center",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
   emoji: {
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     position: "absolute",
@@ -63,7 +70,7 @@ function App() {
   );
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className={classes.container}>
       <div>
         {emojis.map((emoji, index) => (
           <RenderEmoji key={index} emoji={emoji} />
