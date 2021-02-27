@@ -9,6 +9,7 @@ let searchTimerId = null;
 function App() {
   const [typingString, setTypingString] = useState("");
   const [emoji, setEmoji] = useState("");
+  const [emojis, setEmojis] = useState([]);
 
   useEffect(() => {
     if (searchTimerId !== null) {
@@ -18,6 +19,11 @@ function App() {
       search();
     }, 500);
   }, [typingString]);
+
+  useEffect(() => {
+    emojis.push(emoji);
+    setEmojis(emojis);
+  }, [emoji]);
 
   function search() {
     const value = typingString;
@@ -34,11 +40,18 @@ function App() {
     }
   }
 
+  const RenderEmoji = ({ emoji }) => (
+    <div>
+      <Emoji emoji={emoji} size={32} />
+    </div>
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <Emoji emoji={emoji} size={32} />
-
+      <header className="App-content">
+        {emojis.map((emoji) => (
+          <RenderEmoji emoji={emoji} />
+        ))}
         <FormControl>
           <Input
             id="my-input"
