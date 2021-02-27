@@ -48,7 +48,12 @@ function App() {
     if (!firstEmoji) return;
 
     if (value === firstEmoji["id"] || emojiArray.length === 1) {
-      setEmoji(firstEmoji);
+      const emoji = {
+        id: firstEmoji["id"],
+        right: Math.floor(Math.random() * 100) + 1 + "%",
+      };
+
+      setEmoji(emoji);
       setTypingString("");
     }
   }
@@ -57,8 +62,8 @@ function App() {
     <div
       style={{
         position: "absolute",
-        bottom: "10px",
-        right: Math.floor(Math.random() * 100) + 1 + "%",
+        bottom: emoji.bottom,
+        right: emoji.right,
       }}
     >
       <div className="animate__animated animate__fadeInDownBig animate__slow">
@@ -73,7 +78,6 @@ function App() {
         {emojis.map((emoji, index) => (
           <RenderEmoji key={index} emoji={emoji} />
         ))}
-        <RenderEmoji emoji={emoji}></RenderEmoji>
       </div>
 
       <h1>input emoji name</h1>
