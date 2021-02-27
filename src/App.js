@@ -49,8 +49,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-content">
-        {emojis.map((emoji) => (
-          <RenderEmoji emoji={emoji} />
+        {emojis.map((emoji, index) => (
+          <RenderEmoji key={index} emoji={emoji} />
         ))}
         <FormControl>
           <Input
