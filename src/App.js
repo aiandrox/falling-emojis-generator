@@ -16,14 +16,6 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
   },
-  emoji: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    position: "absolute",
-    bottom: "10px",
-    right: () => {
-      return Math.floor(Math.random() * 1100) + 1;
-    },
-  },
 });
 
 function App() {
@@ -62,8 +54,14 @@ function App() {
   }
 
   const RenderEmoji = ({ emoji }) => (
-    <div className={classes.emoji}>
-      <div className="animate__animated animate__fadeInDownBig">
+    <div
+      style={{
+        position: "absolute",
+        bottom: "10px",
+        right: Math.floor(Math.random() * 100) + 1 + "%",
+      }}
+    >
+      <div className="animate__animated animate__fadeInDownBig animate__slow">
         <Emoji emoji={emoji} size={32} />
       </div>
     </div>
@@ -75,6 +73,7 @@ function App() {
         {emojis.map((emoji, index) => (
           <RenderEmoji key={index} emoji={emoji} />
         ))}
+        <RenderEmoji emoji={emoji}></RenderEmoji>
       </div>
 
       <h1>input emoji name</h1>
