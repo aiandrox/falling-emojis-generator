@@ -26,8 +26,12 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
-      emojis.push(emoji);
-      setEmojis(emojis);
+      const a = emojis
+        .filter((elm) => {
+          return elm !== "";
+        })
+        .concat(emoji);
+      setEmojis(a);
       setEmoji("");
     }, 3000);
   }, [emoji]);
