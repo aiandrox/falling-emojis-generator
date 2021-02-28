@@ -4,7 +4,7 @@ export default function BackGround() {
       style={{
         position: "absolute",
         zIndex: -1,
-        color: "#eee",
+        color: "#ffe1de",
         fontSize: "2rem",
         fontFamily: "BlinkMacSystemFont",
         width: "120%",

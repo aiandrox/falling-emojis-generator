@@ -8,6 +8,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import BackGround from "./BackGround";
 
 let searchTimerId = null;
+let fallingTimerId = null;
 const theme = createMuiTheme();
 
 function rand(to) {
@@ -20,6 +21,9 @@ function App() {
   const [stackedEmojis, setStackedEmojis] = useState([]);
 
   useEffect(() => {
+    if (fallingTimerId !== null) {
+      clearTimeout(fallingTimerId);
+    }
     if (searchTimerId !== null) {
       clearTimeout(searchTimerId);
     }
@@ -28,17 +32,11 @@ function App() {
     }, 500);
   }, [typingString]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const newStackedEmojis = stackedEmojis
-  //       // .filter((elm) => {
-  //       //   return elm !== "";
-  //       // })
-  //       .concat(fallingEmojis);
-  //     setStackedEmojis(newStackedEmojis);
-  //     setFallingEmojis([]);
-  //   }, 3000);
-  // }, [fallingEmojis]);
+  useEffect(() => {
+    fallingTimerId = setTimeout(() => {
+      completeFall();
+    }, 3000);
+  }, [fallingEmojis]);
 
   function search() {
     const value = typingString;
@@ -56,17 +54,22 @@ function App() {
 
   function fall(emoji) {
     const newFallingEmojis = [];
-    for (let i = 0; i < rand(20) + 10; i++) {
+    for (let i = 0; i < rand(10) + 10; i++) {
       newFallingEmojis.push({
         id: emoji["id"],
         bottom: Math.floor(Math.random() * 20) - 10 + "px",
-        right: Math.floor(Math.random() * 100) + 1 + "%",
+        right: Math.floor(Math.random() * 100) + "%",
         randValue: rand(100),
       });
     }
 
     setFallingEmojis(newFallingEmojis);
+  }
+
+  function completeFall() {
     setTypingString("");
+    setStackedEmojis(stackedEmojis.concat(fallingEmojis));
+    setFallingEmojis([]);
   }
 
   const RenderEmoji = ({ emoji, isOnly }) => (
