@@ -34,8 +34,11 @@ function App() {
   }, [typingString]);
 
   useEffect(() => {
-    emojis.push(emoji);
-    setEmojis(emojis);
+    setTimeout(() => {
+      emojis.push(emoji);
+      setEmojis(emojis);
+      setEmoji("");
+    }, 3000);
   }, [emoji]);
 
   function search() {
