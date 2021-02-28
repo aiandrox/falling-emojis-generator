@@ -12,8 +12,8 @@ const theme = createMuiTheme();
 
 function App() {
   const [typingString, setTypingString] = useState("");
-  const [emoji, setEmoji] = useState("");
-  const [emojis, setEmojis] = useState([]);
+  const [fallingEmojis, setFallingEmojis] = useState("");
+  const [stackedEmojis, setStackedEmojis] = useState([]);
 
   useEffect(() => {
     if (searchTimerId !== null) {
@@ -26,15 +26,15 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
-      const a = emojis
+      const a = stackedEmojis
         .filter((elm) => {
           return elm !== "";
         })
-        .concat(emoji);
-      setEmojis(a);
-      setEmoji("");
+        .concat(fallingEmojis);
+      setStackedEmojis(a);
+      setFallingEmojis("");
     }, 3000);
-  }, [emoji]);
+  }, [fallingEmojis]);
 
   function search() {
     const value = typingString;
@@ -52,7 +52,7 @@ function App() {
         right: Math.floor(Math.random() * 100) + 1 + "%",
       };
 
-      setEmoji(emoji);
+      setFallingEmojis(emoji);
       setTypingString("");
     }
   }
@@ -92,10 +92,10 @@ function App() {
         }}
       >
         <div>
-          {emojis.map((emoji, index) => (
+          {stackedEmojis.map((emoji, index) => (
             <RenderEmoji key={index} emoji={emoji} isOnly={false} />
           ))}
-          <RenderEmoji emoji={emoji} isOnly={true} />
+          <RenderEmoji emoji={fallingEmojis} isOnly={true} />
         </div>
 
         <h1>input emoji name</h1>
