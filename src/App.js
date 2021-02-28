@@ -50,6 +50,7 @@ function App() {
     if (value === firstEmoji["id"] || emojiArray.length === 1) {
       const emoji = {
         id: firstEmoji["id"],
+        bottom: Math.floor(Math.random() * 20) - 10 + "px",
         right: Math.floor(Math.random() * 100) + 1 + "%",
       };
 
@@ -58,7 +59,7 @@ function App() {
     }
   }
 
-  const RenderEmoji = ({ emoji }) => (
+  const RenderEmoji = ({ emoji, isOnly }) => (
     <div
       style={{
         position: "absolute",
@@ -66,9 +67,15 @@ function App() {
         right: emoji.right,
       }}
     >
-      <div className="animate__animated animate__fadeInDownBig animate__slow">
-        <Emoji emoji={emoji} size={32} />
-      </div>
+      {isOnly ? (
+        <div className="animate__animated animate__fadeInDownBig animate__slower">
+          <Emoji emoji={emoji} size={32} />
+        </div>
+      ) : (
+        <div className="">
+          <Emoji emoji={emoji} size={32} />
+        </div>
+      )}
     </div>
   );
 
@@ -76,12 +83,12 @@ function App() {
     <Container maxWidth="sm" className={classes.container}>
       <div>
         {emojis.map((emoji, index) => (
-          <RenderEmoji key={index} emoji={emoji} />
+          <RenderEmoji key={index} emoji={emoji} isOnly={false} />
         ))}
+        <RenderEmoji emoji={emoji} isOnly={true} />
       </div>
 
       <h1>input emoji name</h1>
-      <p>example: thinking_face</p>
       <FormControl>
         <Input
           id="my-input"
