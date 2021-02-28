@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/emoji-typing/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/emoji-typing/static/js/main.47f5f467.chunk.js",
-    "main.js.map": "/emoji-typing/static/js/main.47f5f467.chunk.js.map",
+    "main.js": "/emoji-typing/static/js/main.914418e4.chunk.js",
+    "main.js.map": "/emoji-typing/static/js/main.914418e4.chunk.js.map",
     "runtime-main.js": "/emoji-typing/static/js/runtime-main.1374e7ac.js",
     "runtime-main.js.map": "/emoji-typing/static/js/runtime-main.1374e7ac.js.map",
-    "static/js/2.c34d98d6.chunk.js": "/emoji-typing/static/js/2.c34d98d6.chunk.js",
-    "static/js/2.c34d98d6.chunk.js.map": "/emoji-typing/static/js/2.c34d98d6.chunk.js.map",
+    "static/js/2.ac978656.chunk.js": "/emoji-typing/static/js/2.ac978656.chunk.js",
+    "static/js/2.ac978656.chunk.js.map": "/emoji-typing/static/js/2.ac978656.chunk.js.map",
     "static/js/3.74da8e40.chunk.js": "/emoji-typing/static/js/3.74da8e40.chunk.js",
     "static/js/3.74da8e40.chunk.js.map": "/emoji-typing/static/js/3.74da8e40.chunk.js.map",
     "index.html": "/emoji-typing/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/emoji-typing/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.c34d98d6.chunk.js.LICENSE.txt": "/emoji-typing/static/js/2.c34d98d6.chunk.js.LICENSE.txt"
+    "static/js/2.ac978656.chunk.js.LICENSE.txt": "/emoji-typing/static/js/2.ac978656.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1374e7ac.js",
-    "static/js/2.c34d98d6.chunk.js",
+    "static/js/2.ac978656.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.47f5f467.chunk.js"
+    "static/js/main.914418e4.chunk.js"
   ]
 }
