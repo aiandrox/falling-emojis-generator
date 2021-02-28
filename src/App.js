@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Canvas from "./Canvas";
 import "./App.css";
 import { Emoji, NimbleEmojiIndex } from "emoji-mart";
 import data from "emoji-mart/data/google.json";
@@ -100,7 +99,6 @@ function App() {
           onChange={(e) => setTypingString(e.target.value)}
         />
       </FormControl>
-      <Canvas emoji={"hoge"}></Canvas>
     </Container>
   );
 }
