@@ -55,9 +55,10 @@ function App() {
   function fall(emoji) {
     const newFallingEmojis = [];
     for (let i = 0; i < rand(10) + 10; i++) {
+      const bottom = stackedEmojis.length / 5;
       newFallingEmojis.push({
         id: emoji["id"],
-        bottom: Math.floor(Math.random() * 20) - 10 + "px",
+        bottom: bottom + "px",
         right: Math.floor(Math.random() * 100) + "%",
         randValue: rand(100),
       });
