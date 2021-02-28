@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Emoji, NimbleEmojiIndex } from "emoji-mart";
+import { NimbleEmojiIndex } from "emoji-mart";
 import data from "emoji-mart/data/google.json";
 import { ThemeProvider, TextField, Container } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 import BackGround from "./BackGround";
+import Emojis from "./Emojis";
 
 let searchTimerId = null;
 let fallingTimerId = null;
@@ -73,29 +74,11 @@ function App() {
     setFallingEmojis([]);
   }
 
-  const RenderEmoji = ({ emoji, isOnly }) => (
-    <div
-      style={{
-        position: "absolute",
-        bottom: emoji.bottom,
-        right: emoji.right,
-      }}
-    >
-      {isOnly ? (
-        <div className="animate__animated animate__fadeInDownBig animate__slower">
-          <Emoji emoji={emoji} size={64} />
-        </div>
-      ) : (
-        <div className="">
-          <Emoji emoji={emoji} size={64} />
-        </div>
-      )}
-    </div>
-  );
-
   return (
     <ThemeProvider theme={theme}>
       <BackGround></BackGround>
+      <Emojis emojis={stackedEmojis} isFalling={false}></Emojis>
+      <Emojis emojis={fallingEmojis} isFalling={true}></Emojis>
 
       <Container
         maxWidth="sm"
@@ -107,21 +90,14 @@ function App() {
           alignItems: "center",
         }}
       >
-        <div>
-          {stackedEmojis.map((emoji, index) => (
-            <RenderEmoji key={index} emoji={emoji} isOnly={false} />
-          ))}
-          {fallingEmojis.map((emoji, index) => (
-            <RenderEmoji key={index} emoji={emoji} isOnly={true} />
-          ))}
-        </div>
-
         <h1>input emoji name</h1>
 
         <TextField
           value={typingString}
           onChange={(e) => setTypingString(e.target.value)}
           variant="outlined"
+          color="secondary"
+          fullWidth={true}
         />
       </Container>
     </ThemeProvider>
