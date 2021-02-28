@@ -10,9 +10,13 @@ import BackGround from "./BackGround";
 let searchTimerId = null;
 const theme = createMuiTheme();
 
+function rand(to) {
+  return Math.floor(Math.random() * to) + 1;
+}
+
 function App() {
   const [typingString, setTypingString] = useState("");
-  const [fallingEmojis, setFallingEmojis] = useState("");
+  const [fallingEmojis, setFallingEmojis] = useState([]);
   const [stackedEmojis, setStackedEmojis] = useState([]);
 
   useEffect(() => {
@@ -24,17 +28,17 @@ function App() {
     }, 500);
   }, [typingString]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      const a = stackedEmojis
-        .filter((elm) => {
-          return elm !== "";
-        })
-        .concat(fallingEmojis);
-      setStackedEmojis(a);
-      setFallingEmojis("");
-    }, 3000);
-  }, [fallingEmojis]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const newStackedEmojis = stackedEmojis
+  //       // .filter((elm) => {
+  //       //   return elm !== "";
+  //       // })
+  //       .concat(fallingEmojis);
+  //     setStackedEmojis(newStackedEmojis);
+  //     setFallingEmojis([]);
+  //   }, 3000);
+  // }, [fallingEmojis]);
 
   function search() {
     const value = typingString;
@@ -46,15 +50,23 @@ function App() {
     if (!firstEmoji) return;
 
     if (value === firstEmoji["id"] || emojiArray.length === 1) {
-      const emoji = {
-        id: firstEmoji["id"],
+      fall(firstEmoji);
+    }
+  }
+
+  function fall(emoji) {
+    const newFallingEmojis = [];
+    for (let i = 0; i < rand(20) + 10; i++) {
+      newFallingEmojis.push({
+        id: emoji["id"],
         bottom: Math.floor(Math.random() * 20) - 10 + "px",
         right: Math.floor(Math.random() * 100) + 1 + "%",
-      };
-
-      setFallingEmojis(emoji);
-      setTypingString("");
+        randValue: rand(100),
+      });
     }
+
+    setFallingEmojis(newFallingEmojis);
+    setTypingString("");
   }
 
   const RenderEmoji = ({ emoji, isOnly }) => (
@@ -95,7 +107,9 @@ function App() {
           {stackedEmojis.map((emoji, index) => (
             <RenderEmoji key={index} emoji={emoji} isOnly={false} />
           ))}
-          <RenderEmoji emoji={fallingEmojis} isOnly={true} />
+          {fallingEmojis.map((emoji, index) => (
+            <RenderEmoji key={index} emoji={emoji} isOnly={true} />
+          ))}
         </div>
 
         <h1>input emoji name</h1>
