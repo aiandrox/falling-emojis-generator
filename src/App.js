@@ -60,7 +60,7 @@ function App() {
       newFallingEmojis.push({
         id: emoji["id"],
         bottom: bottom - 15 + "px",
-        right: rand(100) + "%",
+        right: rand(110) + "%",
         randValue: rand(100),
       });
     }
