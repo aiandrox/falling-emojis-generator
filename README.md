@@ -1,19 +1,18 @@
 # falling emojis generator
 
-あなたの熱意が票になる、投票し放題の人気投票です。
+絵文字を入力する→絵文字が落ちてくる  
+実にシンプルなタイピングゲーム（？）です。
 
-アプリページ
+アプリページ  
 https://aiandrox.github.io/emoji-typing/
 
 ![プレビュー](./public/ogp.png)
 
-1週間でwebサービスを作るweb1weekというオンラインハッカソンの提出作品です。
+1週間でwebサービスを作るweb1weekというオンラインハッカソンの提出作品です。  
 テーマ「増やす」
 
-https://crieit.net/boards/web1week-202102/falling-emojis-genarator
+[絵文字を入力しがいのある『falling emojis genarator』 （2/22～2/28）１週間でWebサービスを作るイベント \- お題「増やす」 \- Boards \- Crieit](https://crieit.net/boards/web1week-202102/falling-emojis-genarator)
 
-絵文字を入力する→絵文字が落ちてくる
-実にシンプルです。
 
 ## 使用技術など
 
