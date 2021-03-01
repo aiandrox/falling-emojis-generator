@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/emoji-typing/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/emoji-typing/static/js/main.914418e4.chunk.js",
-    "main.js.map": "/emoji-typing/static/js/main.914418e4.chunk.js.map",
+    "main.js": "/emoji-typing/static/js/main.5d3643ed.chunk.js",
+    "main.js.map": "/emoji-typing/static/js/main.5d3643ed.chunk.js.map",
     "runtime-main.js": "/emoji-typing/static/js/runtime-main.1374e7ac.js",
     "runtime-main.js.map": "/emoji-typing/static/js/runtime-main.1374e7ac.js.map",
     "static/js/2.ac978656.chunk.js": "/emoji-typing/static/js/2.ac978656.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1374e7ac.js",
     "static/js/2.ac978656.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.914418e4.chunk.js"
+    "static/js/main.5d3643ed.chunk.js"
   ]
 }
