@@ -46,6 +46,12 @@ function App() {
     const emojiIndex = new NimbleEmojiIndex(data);
     const emojiArray = emojiIndex.search(value);
     const firstEmoji = emojiArray[0];
+
+    if (value === "pien" || "ぴえん") {
+      const pien = emojiIndex.search("pleading")[0];
+      fall(pien);
+    }
+
     if (!firstEmoji) return;
 
     if (
