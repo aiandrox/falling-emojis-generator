@@ -48,7 +48,11 @@ function App() {
     const firstEmoji = emojiArray[0];
     if (!firstEmoji) return;
 
-    if (value === firstEmoji["id"] || emojiArray.length === 1) {
+    if (
+      value.replaceAll(/[-|_]/g, " ") ===
+        firstEmoji["id"].replaceAll(/[-|_]/g, " ") ||
+      emojiArray.length === 1
+    ) {
       fall(firstEmoji);
     }
   }
@@ -60,7 +64,7 @@ function App() {
       newFallingEmojis.push({
         id: emoji["id"],
         bottom: bottom - 15 + "px",
-        right: rand(110) + "%",
+        right: rand(120) + "%",
         randValue: rand(100),
       });
     }
