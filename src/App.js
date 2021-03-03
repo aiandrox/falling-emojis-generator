@@ -47,7 +47,7 @@ function App() {
     const emojiArray = emojiIndex.search(value);
     const firstEmoji = emojiArray[0];
 
-    if (value === "pien" || "ぴえん") {
+    if (value === "pien" || value === "ぴえん") {
       const pien = emojiIndex.search("pleading")[0];
       fall(pien);
     }
