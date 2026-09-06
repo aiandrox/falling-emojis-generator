@@ -8,6 +8,12 @@ https://aiandrox.github.io/falling-emojis-generator/
 
 ![プレビュー](./public/ogp.png)
 
+## デモ
+
+絵文字名を入力すると、その絵文字が画面上から降ってきて画面下に積もっていきます。
+
+![デモ](./public/demo.gif)
+
 1週間でwebサービスを作るweb1weekというオンラインハッカソンの提出作品です。
 テーマ「増やす」
 
